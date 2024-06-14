@@ -1,0 +1,10 @@
+﻿Library
+Logs
+MemoryCaptures
+obj
+Recordings
+UserSettings
+*.vsconfig
+*.csproj
+*.log
+*.sln

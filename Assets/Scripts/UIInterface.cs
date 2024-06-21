@@ -7,6 +7,7 @@ public interface IUI {
     void Show(IUIData data = null);
     void Hide();
     void UpdateUI(IUIData data = null);
+    void SetInteractive(bool value);
 }
 
 

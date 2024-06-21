@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using DG.Tweening;
+using System;
 
 public class EnemyChess : BaseChess, IEnemy
 {
     [SerializeField] private ChessType chessType;
     public ChessType GetChessType => chessType;
+    protected event Action OnFinishMoveAction;
 
     public override void Spawn(Vector3Int position)
     {
         base.Spawn(position);
         board.enemies.Add(this);
+        OnFinishMoveAction += board.OnEnemyFinish;
     }
 
     public virtual void AIMove()
@@ -37,6 +40,7 @@ public class EnemyChess : BaseChess, IEnemy
 
     protected virtual void OnMoveComplete()
     {
+        OnFinishMoveAction?.Invoke();
     }
 
     public override void Dead()
@@ -45,12 +49,14 @@ public class EnemyChess : BaseChess, IEnemy
         EffectManager.PlayerEffect("blackDead", transform.position, transform.rotation);
         board.enemies.Remove(this);
         board.enemyPool.ReleaveChess(this, chessType);
+        OnFinishMoveAction -= board.OnEnemyFinish;
         DOTween.Kill(this);
     }
 
     public override void Reset()
     {
         board.enemyPool.ReleaveChess(this, chessType);
+        OnFinishMoveAction -= board.OnEnemyFinish;
         DOTween.Kill(this);
     }
 

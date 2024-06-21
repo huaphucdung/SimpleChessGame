@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -50,6 +51,7 @@ public class Pawn : EnemyChess
             Move(normalMove3D);
             return;
         }
+        OnMoveComplete();
     }
 
     public override void Move(Vector3Int position)
@@ -86,7 +88,13 @@ public class Pawn : EnemyChess
     {
         if (current2DCellPosition.y == 0)
         {
+            //Need call this
             UpGradeChess();
+            board.OnEnemyFinish();
+        }
+        else
+        {
+            base.OnMoveComplete();
         }
     }
 

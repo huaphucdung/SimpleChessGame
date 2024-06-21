@@ -61,10 +61,12 @@ public class UIManager : MonoBehaviour
         currentUIData = data;
         
         currentUI.Show(data);
+        currentUI.SetInteractive(true);
     }
 
     public void HideCurrentUI()
     {
+        currentUI.SetInteractive(false);
         currentUI?.Hide();
     }
 
@@ -81,7 +83,7 @@ public class UIManager : MonoBehaviour
 
     public void ChangeScreen(Action oneStepAction, Action finishAction)
     {
-      
+        currentUI.SetInteractive(false);
         int counter = 0;
         blackScreenBottom.rectTransform.DOLocalMoveY(-positionClose, 1.5f).SetEase(Ease.InOutCubic).SetLoops(2, LoopType.Yoyo);
         blackScreenTop.rectTransform.DOLocalMoveY(positionClose, 1.5f).SetEase(Ease.InOutCubic).SetLoops(2, LoopType.Yoyo).OnStepComplete(() =>

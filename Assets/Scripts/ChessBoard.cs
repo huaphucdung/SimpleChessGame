@@ -40,8 +40,8 @@ public class ChessBoard : MonoBehaviour
     public Action<TurnType> ChangeTurnAction { get; set; }
     public Action GameOverAction { get; set; }
     
-
     private float curretnTimeDeplay;
+    private int enemyFinish;
 
     public void Initialize(GameManager manager)
     {
@@ -72,6 +72,7 @@ public class ChessBoard : MonoBehaviour
         //Add Player in list
         playerChess.gameObject.SetActive(true);
         playerChess.Spawn(Vector3Int.zero);
+        enemyFinish = 0;
     }
 
     public void ResetBoard()
@@ -136,6 +137,14 @@ public class ChessBoard : MonoBehaviour
         {
             enemy.AIMove();
         }
+        
+    }
+
+    public void OnEnemyFinish()
+    {
+        enemyFinish++;
+        if (enemyFinish < enemies.Count) return;
+        enemyFinish = 0;
         ChangeTurnAction?.Invoke(TurnType.Player);
     }
     #endregion

@@ -604,8 +604,66 @@ MonoBehaviour:
         Value: 030000000300000002000000
       - Key: 25
         Value: 0400000004000000
+      - Key: 26
+        Value: 050000000500000005000000
+      - Key: 27
+        Value: 010000000100000001000000
+      - Key: 28
+        Value: 020000000100000001000000
+      - Key: 29
+        Value: 020000000300000001000000
+      - Key: 30
+        Value: 030000000300000003000000
+      - Key: 31
+        Value: 04000000050000000500000000000000
+      - Key: 32
+        Value: 02000000020000000000000000000000
+      - Key: 33
+        Value: 02000000010000000100000000000000
+      - Key: 34
+        Value: 03000000010000000400000005000000
+      - Key: 35
+        Value: 02000000020000000400000005000000
+      - Key: 36
+        Value: 01000000010000000400000005000000
+      - Key: 37
+        Value: 02000000020000000200000002000000
+      - Key: 38
+        Value: 03000000030000000300000003000000
+      - Key: 39
+        Value: 01000000010000000100000001000000
+      - Key: 40
+        Value: 01000000020000000100000002000000
+      - Key: 41
+        Value: 04000000010000000100000003000000
+      - Key: 42
+        Value: 040000000200000003000000000000000000000000000000
+      - Key: 43
+        Value: 040000000200000003000000040000000000000000000000
+      - Key: 44
+        Value: 040000000500000005000000020000000000000000000000
+      - Key: 45
+        Value: 000000000300000003000000020000000200000000000000
+      - Key: 46
+        Value: 000000000300000003000000010000000100000000000000
+      - Key: 47
+        Value: 020000000300000002000000010000000100000000000000
+      - Key: 48
+        Value: 020000000100000002000000010000000000000000000000
+      - Key: 49
+        Value: 020000000100000004000000030000000100000002000000
+      - Key: 50
+        Value: 00000000050000000400000004000000040000000000000000000000
       - Key: -1
-        Value: 04000000050000000000000000000000
+        Value: 050000000300000001000000040000000200000000000000
+      - Key: -2
+        Value: 0500000002000000020000000200000004000000
+      - Key: -3
+        Value: 0100000002000000020000000200000001000000
+      - Key: -4
+        Value: 0400000004000000010000000200000000000000
+      - Key: -5
+        Value: 0000000000000000000000000000000000000000
   CVCamera: {fileID: 1589347827}
   CInputProvider: {fileID: 1589347830}
   numberTurnToSpawn: 4
@@ -1207,6 +1265,7 @@ GameObject:
   - component: {fileID: 166006291}
   - component: {fileID: 166006290}
   - component: {fileID: 166006292}
+  - component: {fileID: 166006293}
   m_Layer: 5
   m_Name: PauseMenuUI
   m_TagString: Untagged
@@ -1285,10 +1344,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d510d5f3f078ef49bf6a21a403ed7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 166006293}
   continueBtn: {fileID: 1171830082}
   replayBtn: {fileID: 1330557876}
   optionsBtn: {fileID: 236349889}
   menuBtn: {fileID: 1441789082}
+--- !u!225 &166006293
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166006288}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &180969312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4766041180050818, guid: 040d801d450eef54bb6e20ccc16831ec,
@@ -1575,7 +1647,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -1945,7 +2017,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2290,7 +2362,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 3da0960c73214d948b4bc96c25e25dab, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 7b52457e77f66d347af01a533c195055, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 3da0960c73214d948b4bc96c25e25dab, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 7b52457e77f66d347af01a533c195055, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -2696,6 +2768,7 @@ GameObject:
   - component: {fileID: 404331653}
   - component: {fileID: 404331655}
   - component: {fileID: 404331656}
+  - component: {fileID: 404331657}
   m_Layer: 5
   m_Name: GameplayUI
   m_TagString: Untagged
@@ -2743,8 +2816,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a046d18ecad0a6c4f94322259a0d61ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 404331657}
   pauseBtn: {fileID: 327571854}
   levelText: {fileID: 470401324}
+--- !u!225 &404331657
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404331652}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,6 +5006,7 @@ GameObject:
   - component: {fileID: 839941260}
   - component: {fileID: 839941259}
   - component: {fileID: 839941261}
+  - component: {fileID: 839941262}
   m_Layer: 5
   m_Name: SettingUI
   m_TagString: Untagged
@@ -4998,9 +5085,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04fe7df33fa6c22409e1d1bfb7c6b97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 839941262}
   musicToggle: {fileID: 1564190950}
   vfsToggle: {fileID: 1635467012}
   exitBtn: {fileID: 1605702509}
+--- !u!225 &839941262
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839941257}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &852091492
 GameObject:
   m_ObjectHideFlags: 0
@@ -5013,6 +5113,7 @@ GameObject:
   - component: {fileID: 852091495}
   - component: {fileID: 852091494}
   - component: {fileID: 852091496}
+  - component: {fileID: 852091497}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -5091,10 +5192,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8702aa3bdf62ca41aeefb2617c44e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 852091497}
   replayBtn: {fileID: 1130775887}
   menuBtn: {fileID: 1028200898}
   bestLevel: {fileID: 1316682214}
   currentLevel: {fileID: 544763732}
+--- !u!225 &852091497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852091492}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &888207874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5987,7 +6101,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 6d043a3b4f88ac940b395bf05b2e47fe, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 425092e49cf41c141809ea68fd60971f, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 6d043a3b4f88ac940b395bf05b2e47fe, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 425092e49cf41c141809ea68fd60971f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6757,7 +6871,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 3a98d1e7de3e28d4398b51dfa884ce4b, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: af13c4b837823d24496690f87ef44e0f, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 3a98d1e7de3e28d4398b51dfa884ce4b, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: af13c4b837823d24496690f87ef44e0f, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -7130,7 +7244,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -7280,6 +7394,7 @@ GameObject:
   - component: {fileID: 1247645600}
   - component: {fileID: 1247645602}
   - component: {fileID: 1247645603}
+  - component: {fileID: 1247645604}
   m_Layer: 5
   m_Name: MainMenuUI
   m_TagString: Untagged
@@ -7328,8 +7443,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7d4174873e2b74686eacd633d3c50e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1247645604}
   playBtn: {fileID: 2001955193}
   settingBtn: {fileID: 265696162}
+--- !u!225 &1247645604
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247645599}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1256600449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7924,7 +8052,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -8787,7 +8915,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -9928,7 +10056,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -11711,7 +11839,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 7629059964ee7cf4d934735d56c1d2a6, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: c63757143df718e4b98b7f92cfd2f17c, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted

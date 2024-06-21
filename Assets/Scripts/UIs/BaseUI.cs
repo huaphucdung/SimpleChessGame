@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BaseUI : MonoBehaviour, IUI
 {
+    [SerializeField] private CanvasGroup canvasGroup;
     protected bool IsShow;
 
     public virtual void Initialize()
@@ -37,5 +38,10 @@ public class BaseUI : MonoBehaviour, IUI
     protected virtual void RemoveUIAction()
     {
 
+    }
+
+    public void SetInteractive(bool value)
+    {
+        canvasGroup.interactable = value;
     }
 }

@@ -8,3 +8,5 @@ UserSettings
 *.csproj
 *.log
 *.sln
+.vs
+Temp

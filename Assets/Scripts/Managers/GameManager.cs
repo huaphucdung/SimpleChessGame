@@ -244,7 +244,8 @@ public class LevelDesign
         {
             return levelDictionary[level];
         }
-        return levelDictionary[-1];
+        int index = UnityEngine.Random.Range(1, 6);
+        return levelDictionary[-index];
     }
 
 }

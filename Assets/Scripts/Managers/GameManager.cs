@@ -9,6 +9,9 @@ using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Admobs:")]
+    [SerializeField] private GoogleMobileAdsScript googleMobileAdsScript;
+
     [Header("Manager Settings:")]
     [SerializeField] private UIManager uiManager;
     [SerializeField] private AudioManager audioManger;
@@ -29,6 +32,7 @@ public class GameManager : MonoBehaviour
     private bool isNewGame;
     private bool isReturnMenuGame;
 
+    private int numberReplay;
     private void Awake()
     {
         cameraPOV = CVCamera.GetCinemachineComponent<CinemachinePOV>();
@@ -39,6 +43,7 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 90;
         InputManager.Initialize();
         InputManager.EnableInput();
+        googleMobileAdsScript.LoadInterstitialAd();
         CInputProvider.XYAxis = InputActionReference.Create(InputManager.playerInput.Look);
         chessBoard = GetComponent<ChessBoard>();
         chessBoard.Initialize(this);
@@ -47,6 +52,7 @@ public class GameManager : MonoBehaviour
         audioManger.Initilize();
         effectManager.Initialize();
         MainMenu();
+        numberReplay = 0;
     }
 
     private void OnApplicationQuit()
@@ -67,6 +73,15 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        numberReplay++;
+
+        if(numberReplay % 3 == 0)
+        {
+            googleMobileAdsScript.ShowInterstitialAd();
+            numberReplay = 0;
+            return;
+        }
+
         if (isNewGame) return;
         DOTween.KillAll();
         isNewGame = true;

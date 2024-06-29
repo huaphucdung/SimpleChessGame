@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseUI : MonoBehaviour, IUI
 {
-    [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] protected CanvasGroup canvasGroup;
     protected bool IsShow;
 
     public virtual void Initialize()

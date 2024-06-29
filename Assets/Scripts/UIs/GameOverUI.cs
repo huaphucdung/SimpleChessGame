@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,6 +19,9 @@ public class GameOverUI : BaseUI
     {
         base.Show(data);
 
+        canvasGroup.alpha = 0;
+        canvasGroup.DOFade(1,0.5f);
+ 
         GameOverUIData uiData = (GameOverUIData)data;
         bestLevel.text = $"Your best level: {uiData.bestLevel}";
         currentLevel.text = $"{uiData.currentLevel}";
